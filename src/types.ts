@@ -1,5 +1,6 @@
 import { DataQuery, DataSourceJsonData } from '@grafana/data';
 
+// TODO(jqphu): set up query fields if you want it.
 export interface MyQuery extends DataQuery {
   queryText?: string;
   constant: number;
@@ -9,6 +10,7 @@ export const defaultQuery: Partial<MyQuery> = {
   constant: 6.5,
 };
 
+// TOOD(jqphu): fill these out
 export interface DataPoint {
   Time: number;
   Value: number;
@@ -21,7 +23,8 @@ export interface DataSourceResponse {
  * These are options configured for each DataSource instance
  */
 export interface MyDataSourceOptions extends DataSourceJsonData {
-  path?: string;
+  url: string;
+  githubOwnerId: number;
 }
 
 /**
