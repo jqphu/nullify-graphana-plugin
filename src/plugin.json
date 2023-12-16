@@ -31,6 +31,18 @@
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
+  "routes": [
+    {
+      "path": "sca/events",
+      "url": "{{ .JsonData.url }}/sca/events",
+      "headers": [
+        {
+          "name": "Authorization",
+          "content": "Bearer {{ .SecureJsonData.apiKey }}"
+        }
+      ]
+    }
+  ],
   "dependencies": {
     "grafanaDependency": ">=10.0.3",
     "plugins": []
